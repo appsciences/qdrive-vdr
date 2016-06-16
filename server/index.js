@@ -13,6 +13,6 @@ app.use(express.static(path.resolve('build'), {
     index: false
 }));
 
-app.listen(3001, function() {
+const server = app.listen(process.env.PORT || 3001, function() {
     console.info('Listening on port:', this.address().port);
 });
