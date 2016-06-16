@@ -1,3 +1,4 @@
+require("../css/index.css");
 
 const React = require('react'),
     ReactDOM = require('react-dom');
@@ -10,43 +11,121 @@ const ReactBootstrap = require('react-bootstrap'),
     Row = ReactBootstrap.Row,
     Col = ReactBootstrap.Col,
     Button = ReactBootstrap.Button,
+    FormControl = ReactBootstrap.FormControl,
+    FormGroup = ReactBootstrap.FormGroup,
+    ControlLabel = ReactBootstrap.ControlLabel,
+    Glyphicon = ReactBootstrap.Glyphicon,
     Alert = ReactBootstrap;
+
+const Select = require('react-select');
 
 const Application = React.createClass({
 
     getInitialState() {
         return {
-            alerts: ['alert1', 'alert2', 'alert3']
+            lines: 1,
+            names: [''],
+            responsible: [''],
+            parties: ['']
         };
     },
 
+    addLine(e){
+
+        this.setState({lines:this.state.lines + 1});
+
+    },
+
+    setName(value, ordinal){
+
+        this.setState({names: this.state.names.fill(value, ordinal , ordinal + 1)})
+    },
+
+    setResponsible(value, ordinal){
+
+        this.setState({responsible: this.state.responsible.fill(value, ordinal , ordinal + 1)})
+    },
+
+    setParties(value, ordinal){
+
+        this.setState({responsible: this.state.parties.fill(value, ordinal , ordinal + 1)})
+    },
 
     render() {
 
-        var i = 0;
-        return (
-
-            <Grid>
+        var lines = [];
+        for (var j = 0; j < this.state.lines; j++) {
+            lines.push(
                 <Row>
-                    <Col xs={4}>
-                        <h1>React Demo</h1>
+                    <Col sm={3}>
+                        <ControlLabel>Document Name</ControlLabel>
+                        <FormControl
+                            type="text"
+                            placeholder="Enter text"
+                            value={this.state.names[j]}
+                            onChange={(e) => this.setName(e.target.value, j)}/>
+                    </Col>
+                    <Col sm={3}>
+                        <ControlLabel>Responsible</ControlLabel>
+                        <Select
+
+                            name="entityType"
+                            value={this.state.responsible[j]}
+
+                            options={[
+                                            {label:"Party 1", value:"Corp"},
+                                            {label:"Party 2", value:"LLC"},
+                                            {label:"Party 3", value:"LP"}
+                                        ]}
+                            onChange={(v) => this.setResponsible(v, j)}
+                            />
                     </Col>
 
+                    <Col sm={3}>
+                        <ControlLabel>Parties</ControlLabel>
+
+                        <Select
+                            name="entityType"
+                            multiple={true}
+                            options={[
+                                {label:"Party 1", value:"Corp"},
+                                {label:"Party 2", value:"LLC"},
+                                {label:"Party 3", value:"LP"}
+                            ]}
+                            onChange={(v) => this.setParties(v, j)}
+                            value={this.state.parties[j]}
+
+                            />
+                    </Col>
+                    <Col sm={1} style={{paddingTop:25}}>
+                        <Button bsStyle="primary" onClick={this.addLine}>
+                            <Glyphicon glyph="plus"/>
+                        </Button>
+                    </Col>
                 </Row>
-                {
-                    this.status.alerts.map(() => (
-                        <Row>
-                            <Col xs={4}>
-                                        <Alert><h3>Hello {this.props.name}</h3></Alert>
-                            </Col>
 
-                        </Row>)
-                    );
-                }
+            );
+        }
+
+        return (
+            <Grid>
+                <Row>
+                    <Col sm={8}>
+                        <h3>Documents</h3>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col sm={11}>
+                        <Panel>
+                            <Grid>
+                                {lines}
 
 
+                            </Grid>
+                        </Panel>
+                    </Col>
+                </Row>
             </Grid>
-
 
         );
     }

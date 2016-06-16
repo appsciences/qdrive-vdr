@@ -1,0 +1,191 @@
+/* could not inline bootstrap, just doesn't work */
+/*@import "../../node_modules/bootstrap/dist/css/bootstrap.css";*/
+@import "../../node_modules/react-select/dist/react-select.css";
+
+body {
+    background-color: #4A768D;
+}
+
+a:hover {
+    cursor:pointer;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+.tab-dropzone {
+    background-color: #286090;
+    color: #fff;
+}
+
+.Select-control {
+    margin-bottom: 15px;
+}
+
+.react-select-inline {
+    width: 20%;
+}
+
+.react-select-inline .Select-control {
+    margin-bottom: 0;
+}
+
+.qdrive-small {
+    width: 100px
+}
+
+.panel-title-accordion a {
+    display: block;
+    text-decoration: none;
+}
+
+.info-sheet-modal {
+    width: 80%;
+}
+
+.form-horizontal .form-group {
+    margin: 0;
+}
+
+.closing-sheet-modal {
+    width: 80%;
+}
+
+.term-sheet-modal {
+    width: 70%;
+}
+
+.btn-toggle-active,  .btn-toggle-active:hover, .btn-toggle-active:focus{
+
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    outline: 0;
+}
+
+.btn-toggle-inactive,  .btn-toggle-inactive:hover, .btn-toggle-inactive:focus{
+
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    outline: 0;
+}
+
+.popover {
+    min-width: 480px;
+}
+
+.popover-more:hover {
+    color: blue;
+}
+
+.client-item:hover .edit-button {
+    display: inline;
+}
+
+.client-item .edit-button {
+    display: none;
+}
+
+.popover-content {
+    min-width: 480px;
+    margin-left: -6px;
+}
+
+.popover-content tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.save-status {
+    background-color: rgba(0, 0, 0, 0.36);
+    border-radius: 10px;
+    position: fixed;
+    color: white;
+    padding: 7px;
+    bottom: 20px;
+    right: 40px;
+    z-index: 1500;
+    line-height: 0;
+}
+
+.save-status > * {
+    display: inline-block;
+}
+
+.save-status > *:first-child {
+    margin-right: 7px;
+}
+
+.save-status > *:last-child {
+    top: -5px;
+    position: relative;
+}
+
+.save-status .circle:before {
+    background-color: white;
+}
+
+.hidden-file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.hidden-file-input::-webkit-file-upload-button {
+    cursor: pointer;
+    width: 100%;
+}
+
+.waived-title {
+    text-decoration: line-through;
+}
+
+.waived-checkbox {
+    padding-bottom: 5px;
+}
+
+.waived-checkbox label {
+    margin: 0;
+}
+
+.waived-checkbox span {
+    font-weight: normal;
+    margin-left: 7px;
+}
+
+.static-field-red {
+    background-color: #d9534f;
+    width: 120px;
+    display: inline-block;
+    height: 1.2em;
+}
+
+.static-field-yellow {
+    background-color: #FFF700;
+    display: inline-block;
+    opacity: 0.8;
+}
+
+.loading-overlay {
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+}
+
+.loading-overlay .circle:before {
+    background-color: black;
+}
+
+.loading-overlay .circle-wrapper {
+    margin-left: 45%;
+    margin-top: 150px;
+    height: 60px;
+    width: 60px;
+}

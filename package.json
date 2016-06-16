@@ -11,10 +11,13 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "react": "*",
-    "react-dom": "*",
+    "css-loader": "^0.23.1",
+    "express": "*",
+    "react": "^15.1.0",
     "react-bootstrap": "*",
-    "express": "*"
+    "react-dom": "^15.1.0",
+    "react-select": "^1.0.0-beta13",
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
     "babel-core": "*",

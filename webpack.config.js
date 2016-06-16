@@ -22,6 +22,11 @@ var config = {
                 query: {
                     presets: ['react','es2015']
                 }
+            },
+            // Build css loaded with require
+            {
+                test: /\.css$/,
+                loader: "style!css"
             }
         ]
     },
