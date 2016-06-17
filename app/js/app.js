@@ -3,133 +3,108 @@ require("../css/index.css");
 const React = require('react'),
     ReactDOM = require('react-dom');
 
+const Spinner = require('react-spinkit');
+
+const DocumentList = require('./components/documents/document-list'),
+    ClientListContainer = require('./components/clients/client-list-container'),
+    Parties = require('./components/parties/parties-form')
+
 
 const ReactBootstrap = require('react-bootstrap'),
     Well = ReactBootstrap.Well,
     Panel = ReactBootstrap.Panel,
+    Tabs = ReactBootstrap.Tabs,
+    Tab = ReactBootstrap.Tab,
     Grid = ReactBootstrap.Grid,
     Row = ReactBootstrap.Row,
     Col = ReactBootstrap.Col,
-    Button = ReactBootstrap.Button,
-    FormControl = ReactBootstrap.FormControl,
-    FormGroup = ReactBootstrap.FormGroup,
-    ControlLabel = ReactBootstrap.ControlLabel,
-    Glyphicon = ReactBootstrap.Glyphicon,
-    Alert = ReactBootstrap;
-
-const Select = require('react-select');
+    Button = ReactBootstrap.Button;
 
 const Application = React.createClass({
 
     getInitialState() {
         return {
-            lines: 1,
-            names: [''],
-            responsible: [''],
-            parties: ['']
+            clients: [],
+            selectedClientId: 1,
         };
     },
 
-    addLine(e){
+    componentDidMount() {
 
-        this.setState({lines:this.state.lines + 1});
+        this.setState({clients:[]});
 
     },
 
-    setName(value, ordinal){
 
-        this.setState({names: this.state.names.fill(value, ordinal , ordinal + 1)})
+    selectClient(id) {
+        this.setState({selectedClientId: id});
     },
 
-    setResponsible(value, ordinal){
-
-        this.setState({responsible: this.state.responsible.fill(value, ordinal , ordinal + 1)})
-    },
-
-    setParties(value, ordinal){
-
-        this.setState({responsible: this.state.parties.fill(value, ordinal , ordinal + 1)})
+    saveClient(client) {
     },
 
     render() {
-
-        var lines = [];
-        for (var j = 0; j < this.state.lines; j++) {
-            lines.push(
-                <Row>
-                    <Col sm={3}>
-                        <ControlLabel>Document Name</ControlLabel>
-                        <FormControl
-                            type="text"
-                            placeholder="Enter text"
-                            value={this.state.names[j]}
-                            onChange={(e) => this.setName(e.target.value, j)}/>
-                    </Col>
-                    <Col sm={3}>
-                        <ControlLabel>Responsible</ControlLabel>
-                        <Select
-
-                            name="entityType"
-                            value={this.state.responsible[j]}
-
-                            options={[
-                                            {label:"Party 1", value:"Corp"},
-                                            {label:"Party 2", value:"LLC"},
-                                            {label:"Party 3", value:"LP"}
-                                        ]}
-                            onChange={(v) => this.setResponsible(v, j)}
-                            />
-                    </Col>
-
-                    <Col sm={3}>
-                        <ControlLabel>Parties</ControlLabel>
-
-                        <Select
-                            name="entityType"
-                            multiple={true}
-                            options={[
-                                {label:"Party 1", value:"Corp"},
-                                {label:"Party 2", value:"LLC"},
-                                {label:"Party 3", value:"LP"}
-                            ]}
-                            onChange={(v) => this.setParties(v, j)}
-                            value={this.state.parties[j]}
-
-                            />
-                    </Col>
-                    <Col sm={1} style={{paddingTop:25}}>
-                        <Button bsStyle="primary" onClick={this.addLine}>
-                            <Glyphicon glyph="plus"/>
-                        </Button>
-                    </Col>
-                </Row>
-
-            );
-        }
-
         return (
             <Grid>
                 <Row>
-                    <Col sm={8}>
-                        <h3>Documents</h3>
+                    <Col xs={3}>
+                        <img src="images/qdrive-logo.png"/>
+                    </Col>
+                    <Col xs={9} className="text-right">
+                        <Button style={{marginTop: 12, marginRight: 8}} target='_new' href="http://www.qdrivesolutions.com/tutorial">Tutorial</Button>
+                        <Button style={{marginTop: 12, marginRight: 8}} target='_new' href="http://www.qdrivesolutions.com/comments/">Leave Comment</Button>
+                        <Button style={{marginTop: 12}} href="/logout">Log Out</Button>
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={11}>
-                        <Panel>
-                            <Grid>
-                                {lines}
+                    <Col sm={12}>
+                        <Well>
+                            {/*<Spinner spinnerName='three-bounce' noFadeIn/>*/}
 
+                                <Grid>
 
-                            </Grid>
-                        </Panel>
+                                    <Row>
+                                        <Col sm={4}>
+
+                                                <ClientListContainer
+                                                    clients={this.state.clients}
+                                                    onSelectClient={this.selectClient}
+                                                    selectedClientId={this.state.selectedClientId}
+                                                    saveClient={this.saveClient}
+
+                                                    />
+                                        </Col>
+                                        <Col sm={7}>
+                                            <Panel>
+                                            <Tabs defaultActiveKey={1} className="client-details-tabs">
+                                                <Tab eventKey={1} title="Parties">
+
+                                                </Tab>
+
+                                                <Tab eventKey={2} title="Documents">
+                                                    <DocumentList
+                                                        />
+                                                </Tab>
+                                            </Tabs>
+                                                </Panel>
+                                        </Col>
+                                    </Row>
+                                </Grid>
+                        </Well>
                     </Col>
                 </Row>
-            </Grid>
+                <Row>
+                    <Col sm={6}>
+                        <p className="text-center">© 2015 Qdrive Solutions. All Rights Reserved.</p>
+                    </Col>
+                </Row>
 
+            </Grid>
         );
     }
 });
+
+
 
 
 
