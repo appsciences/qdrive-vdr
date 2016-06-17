@@ -21,13 +21,13 @@
     "react-dom": "^15.1.0",
     "react-select": "^1.0.0-beta13",
     "style-loader": "^0.13.1"
-  },
-  "devDependencies": {
     "babel-core": "*",
     "babel-loader": "*",
     "babel-preset-es2015": "*",
     "babel-preset-react": "*",
     "copy-webpack-plugin": "*",
     "webpack": "*"
-  }
+  },
+  "devDependencies": {}
+
 }
