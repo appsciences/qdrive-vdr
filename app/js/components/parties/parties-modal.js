@@ -1,7 +1,7 @@
 var React = require('react')
     , Spinner = require('react-spinkit');
 
-const DocumentsForm = require('./documents-form');
+const PartiesForm = require('./parties-form');
 
 var ReactBootstrap = require('react-bootstrap')
     , Modal = ReactBootstrap.Modal
@@ -10,7 +10,7 @@ var ReactBootstrap = require('react-bootstrap')
 //TODO: Need to prompt to clear collection when No is clicked
 
 
-var DocumentsModal = React.createClass({
+var PartiesModal = React.createClass({
 
 
     render() {
@@ -22,7 +22,7 @@ var DocumentsModal = React.createClass({
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                            <DocumentsForm
+                            <PartiesForm
                             />
                 </Modal.Body>
             </Modal>
@@ -30,4 +30,4 @@ var DocumentsModal = React.createClass({
     }
 });
 
-module.exports = DocumentsModal;
+module.exports = PartiesModal;

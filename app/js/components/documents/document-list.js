@@ -111,7 +111,6 @@ const DocumentList = React.createClass({
                     <ButtonToolbar>
                         <Button
                             bsStyle="success"
-                            target="_blank"
                             onClick={e=>this.setState({showDocumentsModal:true})}
                         >
                             Add/Edit

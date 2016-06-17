@@ -6,6 +6,7 @@ const React = require('react'),
 const Spinner = require('react-spinkit');
 
 const DocumentList = require('./components/documents/document-list'),
+    PartyList = require('./components/parties/party-list'),
     ClientListContainer = require('./components/clients/client-list-container'),
     Parties = require('./components/parties/parties-form')
 
@@ -77,8 +78,8 @@ const Application = React.createClass({
                                         <Col sm={7}>
                                             <Panel>
                                             <Tabs defaultActiveKey={1} className="client-details-tabs">
-                                                <Tab eventKey={1} title="Parties">
-
+                                                <Tab eventKey={1} title="Working Group">
+<PartyList />
                                                 </Tab>
 
                                                 <Tab eventKey={2} title="Documents">
