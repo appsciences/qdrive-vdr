@@ -25,8 +25,38 @@ const Application = React.createClass({
 
     getInitialState() {
         return {
-            clients: [],
-            selectedClientId: 1,
+            clients: [
+                {
+                    id: 0,
+                    companyName: 'Baelish Entertainment, LLC',
+                    notificationsCount: 3,
+                    status: 0
+                },
+                {
+                    id: 1,
+                    companyName: 'Brianne Travel LLC',
+                    notificationsCount: 1,
+                    status: 0
+
+                },
+
+                {
+                    id: 2,
+                    companyName: 'Firefly Candle Supplies, LLC',
+                    notificationsCount: 0,
+                    status: 0
+
+                },
+                {
+                    id: 3,
+                    companyName: 'Qdrive Solutions, LLC',
+                    notificationsCount: 4,
+                    status: 0
+
+                },
+
+            ],
+            selectedClientId: 1
         };
     },
 
@@ -62,24 +92,24 @@ const Application = React.createClass({
                         <Well>
                             {/*<Spinner spinnerName='three-bounce' noFadeIn/>*/}
 
-                                <Grid>
+                            <Grid>
 
-                                    <Row>
-                                        <Col sm={4}>
+                                <Row>
+                                    <Col sm={4}>
 
-                                                <ClientListContainer
-                                                    clients={this.state.clients}
-                                                    onSelectClient={this.selectClient}
-                                                    selectedClientId={this.state.selectedClientId}
-                                                    saveClient={this.saveClient}
+                                        <ClientListContainer
+                                            clients={this.state.clients}
+                                            onSelectClient={this.selectClient}
+                                            selectedClientId={this.state.selectedClientId}
+                                            saveClient={this.saveClient}
 
-                                                    />
-                                        </Col>
-                                        <Col sm={7}>
-                                            <Panel>
+                                            />
+                                    </Col>
+                                    <Col sm={7}>
+                                        <Panel>
                                             <Tabs defaultActiveKey={1} className="client-details-tabs">
                                                 <Tab eventKey={1} title="Working Group">
-<PartyList />
+                                                    <PartyList />
                                                 </Tab>
 
                                                 <Tab eventKey={2} title="Documents">
@@ -87,10 +117,10 @@ const Application = React.createClass({
                                                         />
                                                 </Tab>
                                             </Tabs>
-                                                </Panel>
-                                        </Col>
-                                    </Row>
-                                </Grid>
+                                        </Panel>
+                                    </Col>
+                                </Row>
+                            </Grid>
                         </Well>
                     </Col>
                 </Row>

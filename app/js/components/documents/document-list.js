@@ -48,38 +48,45 @@ const DocumentList = React.createClass({
             documentList: [
                 {
                     action,
-                    style: {fontWeight:'normal'},
+                    //style: {fontWeight:'normal'},
+                    responsibility: 'Michael Clain',
                     name:'Customer Notification Letter',
 
                 },
                 {
                     action,
-                    style: {fontWeight:'normal', color:'grey'},
+                    responsibility: 'Arya Cleaning Supplies',
+
+                    //style: {fontWeight:'normal', color:'grey'},
                     name:'Factoring Agreement',
 
                 },
                 {
                     action,
-                    style: {fontWeight:'normal', color:'red'},
+                    responsibility: 'Michael Clain',
+                    //style: {fontWeight:'normal', color:'red'},
                     name:'Guarantee Payment',
 
                 },
                 {
                     action,
+                    responsibility: 'Baelish Entertainment',
 
                     name:'Guarantee Validity',
 
                 },
                 {
                     action,
-                    style: {fontWeight:'normal'},
+                    //style: {fontWeight:'normal'},
+                    responsibility: 'Cersei Wines',
 
                     name:'IP Security Agreement'
 
                 },
                 {
                     action,
-                    style: {fontWeight:'normal'},
+                    //style: {fontWeight:'normal'},
+                    responsibility: 'Arya Stark',
 
                     name:'Intercreditor Agreement Affiliated Lender'
 

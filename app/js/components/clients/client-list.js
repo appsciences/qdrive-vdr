@@ -45,8 +45,7 @@ var ClientList = React.createClass({
             <Nav
                 bsStyle="pills"
                 stacked
-                activeKey={this.props.selectedClientId}
-                onSelect={this.props.onSelectClient}
+                activeKey={0}
                 >
                 {list}
             </Nav>

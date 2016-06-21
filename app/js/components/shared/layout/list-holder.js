@@ -11,7 +11,7 @@ const ListHolder = React.createClass({
         onDnd: React.PropTypes.func
     },
 
-    mixins: [SortableMixin],
+    //mixins: [SortableMixin],
 
     componentWillMount() {
         // disabling SortableJS
@@ -40,6 +40,7 @@ const ListHolder = React.createClass({
                             )
                         }
                     </span>
+                    <div className="info">{item.responsibility}</div>
                 </div>
             </div>
         );
