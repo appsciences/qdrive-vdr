@@ -45,6 +45,7 @@ const DocumentList = React.createClass({
         return {
             showDocumentsModal: false,
             showDocusignModal: false,
+            showSendDocumentsModal: false,
             documentList: [
                 {
                     action,
@@ -148,11 +149,16 @@ const DocumentList = React.createClass({
                             Add/Edit
                         </Button>
                         <Button
-                            bsStyle="primary">
+                            bsStyle="primary"
+                            onClick={e=>this.setState({showSendDocumentsModal:true})}
+                            >
                             Share
+
                         </Button><Button
                             bsStyle="primary"
-                            target="_blank">
+                            target="_blank"
+
+                        >
                             Download All
                         </Button>
                     </ButtonToolbar>
@@ -192,14 +198,57 @@ const DocumentList = React.createClass({
                         title="Upload new document"
                     />
                 }
-                {
-                    this.state.sendDocumentsModal &&
                     <SendDocuments
-                        clientId={this.props.client.id}
-                        docs={documentationItems}
-                        onHide={this.setStateVarFunc('sendDocuments', false)}
-                    />
-                }
+                        docs={ [{
+                    id:0,
+                    //style: {fontWeight:'normal'},
+                    responsibility: 'Michael Clain',
+                    name:'Customer Notification Letter',
+
+                },
+                {
+                    id:1,
+                    responsibility: 'Arya Cleaning Supplies',
+
+                    //style: {fontWeight:'normal', color:'grey'},
+                    name:'Factoring Agreement',
+
+                },
+                {
+                    id:2,
+                    responsibility: 'Michael Clain',
+                    //style: {fontWeight:'normal', color:'red'},
+                    name:'Guarantee Payment',
+
+                },
+                {
+                    id:3,
+                    responsibility: 'Baelish Entertainment',
+
+                    name:'Guarantee Validity',
+
+                },
+                {
+                    id:4,
+                    //style: {fontWeight:'normal'},
+                    responsibility: 'Cersei Wines',
+
+                    name:'IP Security Agreement'
+
+                },
+                {
+                    id:5,
+                    //style: {fontWeight:'normal'},
+                    responsibility: 'Arya Stark',
+
+                    name:'Intercreditor Agreement Affiliated Lender'
+
+                }]
+}
+                        show={this.state.showSendDocumentsModal}
+                        onHide={()=>this.setState({showSendDocumentsModal:false})}
+
+                        />
 
 
                 {

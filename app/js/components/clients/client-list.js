@@ -24,24 +24,18 @@ var ClientList = React.createClass({
                 <NavItem key={client.id} bsStyle='primary'
                          href="#"
                          className="client-item"
-                         draggable="true"
-                         onDragStart={e => this.dragStartHandler(e, client)}
                          eventKey={client.id}>
 
-                    <Button className="pull-right edit-button"
-                            name="editClientButton"
-                            onClick={(e) => {e.stopPropagation(); this.props.onEditClient(client)}}>
-                        Edit
-                    </Button>
 
                     <h5>
-                        {client.companyName} {client.notificationsCount ? <Badge>{client.notificationsCount}</Badge> : ""}
+                        eee
                     </h5>
                 </NavItem>
             );
         });
 
         return(
+            <div>
             <Nav
                 bsStyle="pills"
                 stacked
@@ -49,6 +43,53 @@ var ClientList = React.createClass({
                 >
                 {list}
             </Nav>
+                <Nav
+                    bsStyle="pills"
+                    stacked
+                    activeKey='0'
+                    >
+                    <NavItem key='0' bsStyle='primary'
+                             href="#"
+                             className="client-item"
+                             eventKey='0'>
+
+
+                        <h5>
+                            Baelish Entertainment, LLC
+                        </h5>
+                    </NavItem>
+                    <NavItem key='1' bsStyle='primary'
+                             href="#"
+                             className="client-item"
+                             eventKey='1'>
+
+
+                        <h5>
+                            Brianne Travel LLC
+                        </h5>
+                    </NavItem>
+                    <NavItem key='2' bsStyle='primary'
+                             href="#"
+                             className="client-item"
+                             eventKey='2'>
+
+
+                        <h5>
+                            Firefly Candle Supplies, LLC
+                        </h5>
+                    </NavItem>
+                    <NavItem key='3' bsStyle='primary'
+                             href="#"
+                             className="client-item"
+                             eventKey='3'>
+
+
+                        <h5>
+                            Qdrive Solutions, LLC
+                        </h5>
+                    </NavItem>
+                </Nav>
+                </div>
         );
     }
 });
