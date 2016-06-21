@@ -1,6 +1,9 @@
 /* could not inline bootstrap, just doesn't work */
 /*@import "../../node_modules/bootstrap/dist/css/bootstrap.css";*/
 @import "../../node_modules/react-select/dist/react-select.css";
+@import "./list-holder.css";
+@import "./bootstrap-search.css";
+
 
 body {
     background-color: #4A768D;

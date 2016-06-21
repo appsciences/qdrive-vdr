@@ -5,6 +5,7 @@ const PartiesForm = require('./parties-form');
 
 var ReactBootstrap = require('react-bootstrap')
     , Modal = ReactBootstrap.Modal
+    , ButtonToolbar = ReactBootstrap.ButtonToolbar
     , Button = ReactBootstrap.Button;
 
 //TODO: Need to prompt to clear collection when No is clicked
@@ -16,15 +17,21 @@ var PartiesModal = React.createClass({
     render() {
 
         return (
-            <Modal {...this.props} dialogClassName='info-sheet-modal'>
+            <Modal {...this.props}>
                 <Modal.Header closeButton>
-                    <Modal.Title>{/*this.props.client.companyName*/}Documents&nbsp;&nbsp;&nbsp;
+                    <Modal.Title>{/*this.props.client.companyName*/}Add/Edit Party&nbsp;&nbsp;&nbsp;
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                             <PartiesForm
                             />
                 </Modal.Body>
+                <Modal.Footer>
+                    <ButtonToolbar>
+                        <Button bsStyle="primary" title="Import from Outlook or CRM" form="clientForm" disabled='true' name="importButton" value="import">Import</Button>
+                        <Button bsStyle="primary" type="submit" onClick={this.save} name="saveButton" value="save">Save</Button>
+                    </ButtonToolbar>
+                </Modal.Footer>
             </Modal>
         );
     }

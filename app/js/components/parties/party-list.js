@@ -30,25 +30,26 @@ const PartyList = React.createClass({
             showDocusignModal: false,
             documentList: [
                 {
-                    action:'Action',
-                    name:'Name',
-
-                },
-                {
-                    type:'Group',
-                    action:'Action',
-                    name:'Name',
+                    type:'group',
+                    action:'',
+                    name:'Borrowers',
                     subItems:[
                         {
                             action:'',
-                            name:'Name',
+                            name:'Arya Stark, Arya Cleaning Supplies, Inc.',
 
                         },
                         {
                             action:'',
-                            name:'Name',
+                            name:'George Stephanapoulos, Baelish Entertainment, LLC',
 
                         },
+                        {
+                            action:'',
+                            name:'Josephine Mendoza, Cersei Wines, Inc.',
+
+                        }
+
                     ]
 
                 }
@@ -67,7 +68,7 @@ const PartyList = React.createClass({
 
                     <ButtonToolbar>
                         <Button
-                            bsStyle="success"
+                            bsStyle="primary"
                             onClick={e=>this.setState({showDocumentsModal:true})}
                         >
                             Add/Edit

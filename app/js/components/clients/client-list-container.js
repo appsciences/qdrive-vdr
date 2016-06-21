@@ -11,7 +11,7 @@ var ReactBootstrap = require('react-bootstrap')
 var TabsPanel = require('../shared/layout/tabs-panel'),
     Tab = require('../shared/layout/tab');
 
-var ClientModal = require('./client-edit')
+var DealEditModal = require('./deal-edit')
     , ClientList = require('./client-list')
     , ConfirmModal = require('../shared/layout/confirm-modal')
     , StateToolsMixin = require('../shared/mixins/state-tools-mixin');
@@ -89,7 +89,7 @@ var ClientListContainer = React.createClass({
         return (
             <Panel>
                 <div style={{marginBottom:50}}>
-                    <span style={{float: "left", marginRight:10, fontSize:23, fontWeight:"bolder"}}>Clients</span>
+                    <span style={{float: "left", marginRight:10, fontSize:23, fontWeight:"bolder"}}>Deals</span>
                     <Input onChange={e => this.setState({searchQuery: e.target.value})}
                            style={{float: "left", width: 150, marginRight:10}}
                            type="search" placeholder="Search..."/>
@@ -101,7 +101,7 @@ var ClientListContainer = React.createClass({
                 <br/>
 
                 {(this.state.showNewClientModal || this.state.showEditClientModal) &&
-                <ClientModal
+                <DealEditModal
                     onSave={this.props.saveClient}
                     title="New Client"
                     onHide={this.hideClientModal}
@@ -113,13 +113,13 @@ var ClientListContainer = React.createClass({
                 <ConfirmModal title={"Delete client"}
                              onYes={this.deleteClientHandler}
                              onCancel={() => {this.setState({showDeleteModal: false})}}>
-                    All client data, including Information Sheet and
+                    All deal data, including Information Sheet and
                     Term Sheet data will be deleted. <br /> Are you sure?
                 </ConfirmModal>
                 }
 
                 <TabsPanel>
-                    <Tab name="Prospects"
+                    <Tab name="Active"
                          onDrop={e => this.clientDropHandler(e, 0)}>
                         <ClientList
                             clients={this.getFilteredClients(0)}
@@ -130,20 +130,10 @@ var ClientListContainer = React.createClass({
                             selectedClientId={this.props.selectedClientId}
                         />
                     </Tab>
-                    <Tab name="Clients"
+                    <Tab name="Closed"
                          onDrop={e => this.clientDropHandler(e, 1)}>
                         <ClientList
                             clients={this.getFilteredClients(1)}
-                            onSelectClient={this.props.onSelectClient}
-                            onEditClient={this.showEditClientModal}
-                            selectedClient={this.props.selectedClient}
-                            selectedClientId={this.props.selectedClientId}
-                        />
-                    </Tab>
-                    <Tab name="Archives"
-                         onDrop={e => this.clientDropHandler(e, 2)}>
-                        <ClientList
-                            clients={this.getFilteredClients(2)}
                             onSelectClient={this.props.onSelectClient}
                             onEditClient={this.showEditClientModal}
                             selectedClient={this.props.selectedClient}

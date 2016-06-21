@@ -1,0 +1,33 @@
+.documentation-list-holder > li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+.documentation-list-holder .group {
+    padding: 5px 0 5px 15px;
+}
+
+.documentation-list-holder .group-name {
+    font-weight: bold;
+    padding: 8px 0;
+}
+
+.documentation-list-holder .action {
+    float: right;
+}
+
+.documentation-list-holder .info {
+    padding: 7px 0;
+}
+
+.documentation-list-holder .title {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.documentation-list-holder .group .title {
+    font-weight: normal;
+}
+
+.documentation-list-holder input[type=checkbox] {
+    margin-right: 5px;
+}

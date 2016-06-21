@@ -33,33 +33,58 @@ const DocumentList = React.createClass({
 
     getInitialState(){
 
+        const action = (
+            <DropdownButton title="Download" bsStyle="primary">
+            <MenuItem >Upload</MenuItem>
+            <MenuItem >Open Redlined</MenuItem>
+            <MenuItem >Sign</MenuItem>
+            <MenuItem >Activity</MenuItem>
+            <MenuItem >Delete</MenuItem>
+        </DropdownButton>);
+
         return {
             showDocumentsModal: false,
             showDocusignModal: false,
             documentList: [
                 {
-                    action:'Action',
-                    name:'Name',
+                    action,
+                    style: {fontWeight:'normal'},
+                    name:'Customer Notification Letter',
 
                 },
                 {
-                    type:'Group',
-                    action:'Action',
-                    name:'Name',
-                    subItems:[
-                        {
-                            action:'',
-                            name:'Name',
+                    action,
+                    style: {fontWeight:'normal', color:'grey'},
+                    name:'Factoring Agreement',
 
-                        },
-                        {
-                            action:'',
-                            name:'Name',
+                },
+                {
+                    action,
+                    style: {fontWeight:'normal', color:'red'},
+                    name:'Guarantee Payment',
 
-                        },
-                    ]
+                },
+                {
+                    action,
 
-                }
+                    name:'Guarantee Validity',
+
+                },
+                {
+                    action,
+                    style: {fontWeight:'normal'},
+
+                    name:'IP Security Agreement'
+
+                },
+                {
+                    action,
+                    style: {fontWeight:'normal'},
+
+                    name:'Intercreditor Agreement Affiliated Lender'
+
+                },
+
             ]
 
         };
@@ -110,17 +135,16 @@ const DocumentList = React.createClass({
 
                     <ButtonToolbar>
                         <Button
-                            bsStyle="success"
+                            bsStyle="primary"
                             onClick={e=>this.setState({showDocumentsModal:true})}
                         >
                             Add/Edit
                         </Button>
                         <Button
-                            bsStyle="success"
-                            target="_blank">
-                            Send
+                            bsStyle="primary">
+                            Share
                         </Button><Button
-                            bsStyle="success"
+                            bsStyle="primary"
                             target="_blank">
                             Download All
                         </Button>

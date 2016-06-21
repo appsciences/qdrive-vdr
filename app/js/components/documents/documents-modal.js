@@ -5,6 +5,7 @@ const DocumentsForm = require('./documents-form');
 
 var ReactBootstrap = require('react-bootstrap')
     , Modal = ReactBootstrap.Modal
+    , ButtonToolbar = ReactBootstrap.ButtonToolbar
     , Button = ReactBootstrap.Button;
 
 //TODO: Need to prompt to clear collection when No is clicked
@@ -25,6 +26,12 @@ var DocumentsModal = React.createClass({
                             <DocumentsForm
                             />
                 </Modal.Body>
+                <Modal.Footer>
+                    <ButtonToolbar>
+                        <Button bsStyle="primary" type="submit" onClick={this.save} name="saveButton" value="save">Save</Button>
+                    </ButtonToolbar>
+                </Modal.Footer>
+
             </Modal>
         );
     }

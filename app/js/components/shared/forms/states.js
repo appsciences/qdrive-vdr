@@ -77,8 +77,6 @@ var States = React.createClass({
                 }
                 <Select
                     options={options}
-                    value={this.props.getLinkState(linkedPropertyName).value}
-                    onChange={this.props.getLinkState(linkedPropertyName, true).requestChange}
 
                     placeHolder=''
                     {...this.props}

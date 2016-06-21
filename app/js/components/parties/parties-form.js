@@ -7,18 +7,19 @@ const React = require('react'),
 const _ = require('lodash');
 
 
-const ReactBootstrap = require('react-bootstrap'),
-    Well = ReactBootstrap.Well,
-    Panel = ReactBootstrap.Panel,
+var ReactBootstrap = require('react-bootstrap'),
+    FormControl = ReactBootstrap.FormControl,
+    ControlLabel = ReactBootstrap.ControlLabel,
+    Modal = ReactBootstrap.Modal,
     Grid = ReactBootstrap.Grid,
     Row = ReactBootstrap.Row,
     Col = ReactBootstrap.Col,
-    Button = ReactBootstrap.Button,
-    FormControl = ReactBootstrap.FormControl,
-    FormGroup = ReactBootstrap.FormGroup,
-    ControlLabel = ReactBootstrap.ControlLabel,
-    Glyphicon = ReactBootstrap.Glyphicon,
-    Alert = ReactBootstrap;
+    ButtonToolbar = ReactBootstrap.ButtonToolbar,
+    Button = ReactBootstrap.Button;
+
+var States = require("../shared/forms/states"),
+    ContactInfo = require("../shared/forms/contact-info"),
+    ConfirmModal = require("../shared/layout/confirm-modal");
 
 const Select = require('react-select');
 
@@ -54,53 +55,70 @@ const PartiesForm = React.createClass({
         this.setState({responsible: this.state.parties.fill(value, ordinal , ordinal + 1)})
     },
 
-    renderRow(j){
-        return(
-            <Row>
-                <Col sm={3}>
-                    <ControlLabel>Name</ControlLabel>
-                    <FormControl
-                        type="text"
-                        placeholder="Enter text"
-                        value={this.state.names[j]}
-                        onChange={(e) => this.setName(e.target.value, j)}/>
-                </Col>
-
-                <Col sm={3}>
-                    <ControlLabel>Title</ControlLabel>
-                    <FormControl
-                        type="text"
-                        placeholder="Enter text"
-                        value={this.state.names[j]}
-                        onChange={(e) => this.setName(e.target.value, j)}/>
-                </Col>
-
-                <Col sm={3}>
-                    <ControlLabel>Email</ControlLabel>
-                    <FormControl
-                        type="text"
-                        placeholder="Enter text"
-                        value={this.state.names[j]}
-                        onChange={(e) => this.setName(e.target.value, j)}/>
-                </Col>
-
-                <Col sm={1} style={{paddingTop:25}}>
-                    <Button bsStyle="primary" onClick={this.addLine}>
-                        <Glyphicon glyph="plus"/>
-                    </Button>
-                </Col>
-
-            </Row>
-        );
-    },
-
     render() {
 
         return (
-            <Grid>
-
-                {_.times(this.state.lines, (i)=> this.renderRow(i))}
-
+           <Grid fluid={true}>
+                <Row>
+                    <Col sm={6}>
+                        <ControlLabel>Company Name</ControlLabel>
+                        <FormControl type="text" required name="companyName"/>
+                    </Col>
+                    <Col sm={6}>
+                        <ControlLabel>Role</ControlLabel>
+                        <FormControl type="text" required name="companyName"/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col sm={6}>
+                        <ControlLabel>Street Address</ControlLabel>
+                        <FormControl type="text" name='address' />
+                    </Col>
+                    <Col sm={4}>
+                        <ControlLabel>City</ControlLabel>
+                        <FormControl id="city" type="text" name='city' />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col sm={3}>
+                        <States label="State" namePrefix="" />
+                    </Col>
+                    <Col sm={4}>
+                        <ControlLabel>Zip Code</ControlLabel>
+                        <FormControl type="text" name='zip' pattern="^[0-9]{1,5}$" />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col sm={4}>
+                        <h4>Contact</h4>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col sm={5}><ControlLabel>First Name</ControlLabel>
+                        <FormControl type="text" name="contactFirstName"
+                               />
+                    </Col>
+                    <Col sm={5}>
+                        <ControlLabel>Last Name</ControlLabel>
+                        <FormControl type="text" name="contactLastName"/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col sm={8}><ControlLabel>Title</ControlLabel>
+                        <FormControl type="text" name="contactTitle"
+                               />
+                    </Col>
+                </Row>
+               <Row>
+                   <Col sm={5}><ControlLabel>Email</ControlLabel>
+                       <FormControl type="text" name="contactFirstName"
+                           />
+                   </Col>
+                   <Col sm={5}>
+                       <ControlLabel>Phone</ControlLabel>
+                       <FormControl type="text" name="contactLastName"/>
+                   </Col>
+               </Row>
             </Grid>
 
 

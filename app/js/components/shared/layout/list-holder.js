@@ -27,7 +27,7 @@ const ListHolder = React.createClass({
             <div>
                 <div className="action">{item.action}</div>
                 <div className="info">
-                    <span className="title">
+                    <span style={item.style} className="title">
                         {item.name}
                     </span>
                     <span>

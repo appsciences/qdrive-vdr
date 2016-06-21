@@ -66,37 +66,28 @@ const DocumentsForm = React.createClass({
                         onChange={(e) => this.setName(e.target.value, j)}/>
                 </Col>
                 <Col sm={3}>
-                    <ControlLabel>Responsible</ControlLabel>
+                    <ControlLabel>Group</ControlLabel>
+                    <FormControl
+                        type="text"
+                        placeholder="Enter text"
+                        />
+                </Col>
+                <Col sm={3}>
+                    <ControlLabel>Responsibility</ControlLabel>
                     <Select
 
                         name="entityType"
                         value={this.state.responsible[j]}
 
                         options={[
-                                            {label:"Party 1", value:"Corp"},
-                                            {label:"Party 2", value:"LLC"},
-                                            {label:"Party 3", value:"LP"}
+                                            {label:"Arya Cleaning Supplies, Inc.", value:"Corp"},
+                                            {label:"Baelish Entertainment, LLC", value:"LLC"},
+                                            {label:"Cersei Wines, Inc.", value:"LP"}
                                         ]}
                         onChange={(v) => this.setResponsible(v, j)}
                         />
                 </Col>
 
-                <Col sm={3}>
-                    <ControlLabel>Parties</ControlLabel>
-
-                    <Select
-                        name="entityType"
-                        multi
-                        options={[
-                                {label:"Party 1", value:"Corp"},
-                                {label:"Party 2", value:"LLC"},
-                                {label:"Party 3", value:"LP"}
-                            ]}
-                        onChange={(v) => this.setParties(v, j)}
-                        value={this.state.parties[j]}
-
-                        />
-                </Col>
                 <Col sm={1} style={{paddingTop:25}}>
                     <Button bsStyle="primary" onClick={this.addLine}>
                         <Glyphicon glyph="plus"/>
