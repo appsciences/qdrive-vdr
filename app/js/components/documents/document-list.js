@@ -34,12 +34,11 @@ const DocumentList = React.createClass({
     getInitialState(){
 
         const action = (
-            <DropdownButton title="Download" bsStyle="primary">
+            <DropdownButton title="View" bsStyle="primary">
             <MenuItem >Upload</MenuItem>
             <MenuItem >Open Redlined</MenuItem>
             <MenuItem >Sign</MenuItem>
             <MenuItem >Activity</MenuItem>
-            <MenuItem >Delete</MenuItem>
         </DropdownButton>);
 
         return {

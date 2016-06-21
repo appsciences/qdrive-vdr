@@ -39,6 +39,12 @@ const DocumentsForm = React.createClass({
 
     },
 
+    removeLine(e){
+
+        this.setState({lines:this.state.lines - 1});
+
+    },
+
     setName(value, ordinal){
 
         this.setState({names: this.state.names.fill(value, ordinal , ordinal + 1)})
@@ -66,13 +72,6 @@ const DocumentsForm = React.createClass({
                         onChange={(e) => this.setName(e.target.value, j)}/>
                 </Col>
                 <Col sm={3}>
-                    <ControlLabel>Group</ControlLabel>
-                    <FormControl
-                        type="text"
-                        placeholder="Enter text"
-                        />
-                </Col>
-                <Col sm={3}>
                     <ControlLabel>Responsibility</ControlLabel>
                     <Select
 
@@ -88,9 +87,12 @@ const DocumentsForm = React.createClass({
                         />
                 </Col>
 
-                <Col sm={1} style={{paddingTop:25}}>
+                <Col sm={3} style={{paddingTop:25}}>
                     <Button bsStyle="primary" onClick={this.addLine}>
                         <Glyphicon glyph="plus"/>
+                    </Button>&nbsp;
+                    <Button bsStyle="primary" onClick={this.removeLine}>
+                        <Glyphicon glyph="minus"/>
                     </Button>
                 </Col>
             </Row>

@@ -25,6 +25,12 @@ const PartyList = React.createClass({
 
     getInitialState(){
 
+        const action = (
+            <Button
+                bsStyle="primary"
+                onClick={e=>this.setState({showDocumentsModal:true})}
+                >Edit</Button>);
+
         return {
             showDocumentsModal: false,
             showDocusignModal: false,
@@ -35,17 +41,19 @@ const PartyList = React.createClass({
                     name:'Borrowers',
                     subItems:[
                         {
-                            action:'',
+                            action,
+
                             name:'Arya Stark, Arya Cleaning Supplies, Inc.',
 
                         },
                         {
-                            action:'',
+                            action,
+
                             name:'George Stephanapoulos, Baelish Entertainment, LLC',
 
                         },
                         {
-                            action:'',
+                            action,
                             name:'Josephine Mendoza, Cersei Wines, Inc.',
 
                         }

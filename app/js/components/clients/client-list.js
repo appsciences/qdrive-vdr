@@ -65,7 +65,7 @@ var ClientList = React.createClass({
 
 
                         <h5>
-                            Brianne Travel LLC
+                            Brianne Travel LLC <Badge>2</Badge>
                         </h5>
                     </NavItem>
                     <NavItem key='2' bsStyle='primary'
@@ -75,7 +75,7 @@ var ClientList = React.createClass({
 
 
                         <h5>
-                            Firefly Candle Supplies, LLC
+                            Firefly Candle Supplies, LLC&nbsp;<Badge>4</Badge>
                         </h5>
                     </NavItem>
                     <NavItem key='3' bsStyle='primary'

@@ -1,5 +1,9 @@
 const React = require("react");
 
+const ReactBootstrap = require('react-bootstrap');
+
+const Glyphicon = ReactBootstrap.Glyphicon;
+
 const Tabs = React.createClass({
 
     getInitialState() {
@@ -43,6 +47,11 @@ const Tabs = React.createClass({
                 <nav>
                     <ul className="nav nav-tabs" role="tablist">
                         {this.renderNav()}
+                        {this.props.addTab &&
+                        <li role="presentation"><a role="tab" onClick={this.props.onAddTab}>
+                            <Glyphicon glyph="plus"/>
+                        </a></li>
+                        }
                     </ul>
                 </nav>
                 <div className="tab-content">

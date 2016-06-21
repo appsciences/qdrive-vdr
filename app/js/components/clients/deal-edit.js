@@ -2,7 +2,7 @@ var React = require('react'),
     ReactLinkedStateMixin = require('react-addons-linked-state-mixin');
 
 var ReactBootstrap = require('react-bootstrap'),
-    Input = ReactBootstrap.Input,
+    FormControl = ReactBootstrap.FormControl,
     Modal = ReactBootstrap.Modal,
     Grid = ReactBootstrap.Grid,
     Row = ReactBootstrap.Row,
@@ -44,13 +44,13 @@ var ClientEditModal = React.createClass({
         return (
             <Modal show={true} onHide={this.hideHandler}>
                 <Modal.Header closeButton>
-                    <Modal.Title>{this.props.client.id ? 'Edit':'New'} Client</Modal.Title>
+                    <Modal.Title>{this.props.client.id ? 'Edit':'New'} Deal</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Grid fluid={true}>
                         <Row>
                             <Col sm={10}>
-                                <Input type="text" label="Company Name" required name="companyName" valueLink={this.linkState("companyName")}/>
+                                <FormControl type="text" required name="dealName"/>
                             </Col>
                         </Row>
                     </Grid>

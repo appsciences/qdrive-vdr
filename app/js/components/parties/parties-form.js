@@ -70,20 +70,21 @@ const PartiesForm = React.createClass({
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={6}>
+                    <Col sm={8}>
                         <ControlLabel>Street Address</ControlLabel>
                         <FormControl type="text" name='address' />
                     </Col>
+
+                </Row>
+                <Row>
                     <Col sm={4}>
                         <ControlLabel>City</ControlLabel>
                         <FormControl id="city" type="text" name='city' />
                     </Col>
-                </Row>
-                <Row>
                     <Col sm={3}>
                         <States label="State" namePrefix="" />
                     </Col>
-                    <Col sm={4}>
+                    <Col sm={3}>
                         <ControlLabel>Zip Code</ControlLabel>
                         <FormControl type="text" name='zip' pattern="^[0-9]{1,5}$" />
                     </Col>
@@ -118,6 +119,12 @@ const PartiesForm = React.createClass({
                        <ControlLabel>Phone</ControlLabel>
                        <FormControl type="text" name="contactLastName"/>
                    </Col>
+               </Row>
+               <Row>
+                   <Col sm={3}><ControlLabel>Email</ControlLabel>
+                       <Button bsStyle="primary">Save/Add</Button>
+                   </Col>
+
                </Row>
             </Grid>
 

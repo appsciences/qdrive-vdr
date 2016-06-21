@@ -8,10 +8,11 @@ var ReactBootstrap = require('react-bootstrap')
     , TabPane = ReactBootstrap.TabPane
     , Input = ReactBootstrap.Input;
 
-var TabsPanel = require('../shared/layout/tabs-panel'),
-    Tab = require('../shared/layout/tab');
+    var TabsPanel = require('../shared/layout/tabs-panel'),
+        Tab = require('../shared/layout/tab');
 
 var DealEditModal = require('./deal-edit')
+    , TabAddModal = require('./tab-add-modal')
     , ClientList = require('./client-list')
     , ConfirmModal = require('../shared/layout/confirm-modal')
     , StateToolsMixin = require('../shared/mixins/state-tools-mixin');
@@ -25,6 +26,7 @@ var ClientListContainer = React.createClass({
             showNewClientModal:false,
             showEditClientModal:false,
             currentHoverClient: null,
+            showAddTabModal: false,
             searchQuery: ""
         }
     },
@@ -118,7 +120,11 @@ var ClientListContainer = React.createClass({
                 </ConfirmModal>
                 }
 
-                <TabsPanel>
+                <TabAddModal
+                              show={this.state.showAddTabModal}
+                              onHide={() => {this.setState({showAddTabModal: false})}}/>
+
+                <TabsPanel addTab={true} onAddTab={e=>this.setState({showAddTabModal: true})}>
                     <Tab name="Active"
                          onDrop={e => this.clientDropHandler(e, 0)}>
                         <ClientList

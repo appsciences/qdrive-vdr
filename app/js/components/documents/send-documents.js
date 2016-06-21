@@ -84,25 +84,34 @@ const SendDocuments = React.createClass({
 					<Select
 
 						name="entityType"
-
+multi
 						options={[
+                                            {label:"All", value:"Corp"},
                                             {label:"Arya Cleaning Supplies, Inc.", value:"Corp"},
                                             {label:"Baelish Entertainment, LLC", value:"LLC"},
                                             {label:"Cersei Wines, Inc.", value:"LP"}
                                         ]}
 						/>
 					<ButtonToolbar>
-						<Button bsStyle="primary"
+						<Button bsStyle="primary" bsSize="xsmall"
 								onClick={()=>{this.setCheckboxesStatus(true)}}>Select all</Button>
-						<Button bsStyle="primary"
+						<Button bsStyle="primary" bsSize="xsmall"
 								onClick={()=>{this.setCheckboxesStatus(false)}}>Unselect all</Button>
 					</ButtonToolbar>
 
+                    <br/>
 					<ul className="list-group documentation-list-holder">
 						{docs}
 					</ul>
+                    <FormGroup controlId="formControlsTextarea">
+
+                    <FormControl componentClass="textarea" placeholder="Email body text" />
+</FormGroup>
+                </Modal.Body>
+                <Modal.Footer>
 					<Button bsStyle="primary" onClick={this.send}>Send</Button>
-				</Modal.Body>
+                </Modal.Footer>
+
 			</Modal>
 		);
 	}

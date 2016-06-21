@@ -10,16 +10,20 @@ const DocumentList = require('./components/documents/document-list'),
     ClientListContainer = require('./components/clients/client-list-container'),
     Parties = require('./components/parties/parties-form')
 
+const TabAddModal = require('./components/deal-details/tab-add-modal');
+
 
 const ReactBootstrap = require('react-bootstrap'),
     Well = ReactBootstrap.Well,
     Panel = ReactBootstrap.Panel,
-    Tabs = ReactBootstrap.Tabs,
-    Tab = ReactBootstrap.Tab,
     Grid = ReactBootstrap.Grid,
     Row = ReactBootstrap.Row,
     Col = ReactBootstrap.Col,
     Button = ReactBootstrap.Button;
+
+var Tabs = require('./components/shared/layout/tabs-panel'),
+    Tab = require('./components/shared/layout/tab');
+
 
 const Application = React.createClass({
 
@@ -107,12 +111,15 @@ const Application = React.createClass({
                                     </Col>
                                     <Col sm={7}>
                                         <Panel>
-                                            <Tabs defaultActiveKey={1} className="client-details-tabs">
-                                                <Tab eventKey={1} title="Working Group">
+                                            <Tabs
+                                                defaultActiveKey={1}
+                                                addTab={true} onAddTab={e=>this.setState({showAddTabModal: true})}>
+
+                                                <Tab eventKey={1} name="Working Group">
                                                     <PartyList />
                                                 </Tab>
 
-                                                <Tab eventKey={2} title="Documents">
+                                                <Tab eventKey={2} name="Documents">
                                                     <DocumentList
                                                         />
                                                 </Tab>
@@ -129,6 +136,10 @@ const Application = React.createClass({
                         <p className="text-center">© 2015 Qdrive Solutions. All Rights Reserved.</p>
                     </Col>
                 </Row>
+
+                <TabAddModal
+                    show={this.state.showAddTabModal}
+                    onHide={e => {this.setState({showAddTabModal: false})}}/>
 
             </Grid>
         );
