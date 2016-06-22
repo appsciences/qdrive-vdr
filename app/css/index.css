@@ -47,6 +47,10 @@ a:hover {
     width: 80%;
 }
 
+.tickler-modal {
+    width: 90%;
+}
+
 .form-horizontal .form-group {
     margin: 0;
 }

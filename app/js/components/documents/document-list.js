@@ -35,6 +35,7 @@ const DocumentList = React.createClass({
 
         const action = (
             <DropdownButton title="View" bsStyle="primary">
+            <MenuItem >Download</MenuItem>
             <MenuItem >Upload</MenuItem>
             <MenuItem >Open Redlined</MenuItem>
             <MenuItem >Sign</MenuItem>
@@ -49,13 +50,13 @@ const DocumentList = React.createClass({
                 {
                     action,
                     //style: {fontWeight:'normal'},
-                    responsibility: 'Michael Clain',
+                    responsibility: 'Resp: Michael Clain',
                     name:'Customer Notification Letter',
 
                 },
                 {
                     action,
-                    responsibility: 'Arya Cleaning Supplies',
+                    responsibility: 'Resp: Arya Cleaning Supplies',
 
                     //style: {fontWeight:'normal', color:'grey'},
                     name:'Factoring Agreement',
@@ -63,14 +64,14 @@ const DocumentList = React.createClass({
                 },
                 {
                     action,
-                    responsibility: 'Michael Clain',
+                    responsibility: 'Resp: Michael Clain',
                     //style: {fontWeight:'normal', color:'red'},
                     name:'Guarantee Payment',
 
                 },
                 {
                     action,
-                    responsibility: 'Baelish Entertainment',
+                    responsibility: 'Resp: Baelish Entertainment',
 
                     name:'Guarantee Validity',
 
@@ -78,7 +79,7 @@ const DocumentList = React.createClass({
                 {
                     action,
                     //style: {fontWeight:'normal'},
-                    responsibility: 'Cersei Wines',
+                    responsibility: 'Resp: Cersei Wines',
 
                     name:'IP Security Agreement'
 
@@ -86,7 +87,7 @@ const DocumentList = React.createClass({
                 {
                     action,
                     //style: {fontWeight:'normal'},
-                    responsibility: 'Arya Stark',
+                    responsibility: 'Resp: Arya Stark',
 
                     name:'Intercreditor Agreement Affiliated Lender'
 

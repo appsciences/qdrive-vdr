@@ -24,65 +24,108 @@ const Select = require('react-select');
 
 const DocumentsForm = React.createClass({
 
+    getInitialState() {
+        return {
+            lines: 1,
+            frequency: true
+        };
+    },
 
+    addLine(e){
+
+        this.setState({lines:this.state.lines + 1});
+
+    },
+
+    removeLine(e){
+
+        this.setState({lines:this.state.lines - 1});
+
+    },
+
+    renderRow(j){
+        return(
+            <Row>
+                <Col sm={2}>
+                    <ControlLabel>Requirement</ControlLabel>
+                    <FormControl
+                        type="text"
+                        placeholder="Enter text"/>
+                </Col>
+
+                <Col sm={2}>
+                    <ControlLabel>Frequency</ControlLabel>
+
+                <Select
+
+                    name="frequency"
+                    onChange={v=>this.setState({frequency:v.value})}
+                    value={this.state.frequency}
+                    options={[
+                                            {label:"Monthly", value:"Monthly"},
+                                            {label:"Quarterly", value:"Quarterly"},
+                                            {label:"Annually", value:"Annually"},
+                                            {label:"Specify Date", value:"Specify Date"}
+
+
+                                        ]}
+                    />
+                </Col>
+                <Col sm={2}>
+
+
+                <ControlLabel style={{display:this.state.frequency === 'Specify Date' ?'block' : 'none'}}>Specify Date</ControlLabel>
+
+                <FormControl
+                    style={{display:this.state.frequency === 'Specify Date' ?'block' : 'none'}}
+                    type="date"
+                    />
+
+                <ControlLabel style={{display:this.state.frequency !== 'Specify Date' ?'block' : 'none'}}>Days After Period</ControlLabel>
+
+                <FormControl
+                    style={{display:this.state.frequency !== 'Specify Date' ?'block' : 'none'}}
+                    placeholder="Enter text"
+                    />
+                </Col>
+                <Col sm={2}>
+                    <ControlLabel>Prior Alert</ControlLabel>
+                    <FormControl
+                        type="text"
+                        placeholder="Enter text"/>
+                </Col>
+
+                <Col sm={2}>
+                    <ControlLabel>Send Reminders To</ControlLabel>
+                    <Select
+
+                        name="entityType"
+
+                        options={[
+                                            {label:"Arya Cleaning Supplies, Inc.", value:"Corp"},
+                                            {label:"Baelish Entertainment, LLC", value:"LLC"},
+                                            {label:"Cersei Wines, Inc.", value:"LP"}
+                                        ]}
+                        />
+                </Col>
+                <Col sm={2} style={{paddingTop:25}}>
+                    <Button bsStyle="primary" onClick={this.addLine}>
+                        <Glyphicon glyph="plus"/>
+                    </Button>&nbsp;
+                    <Button bsStyle="primary" onClick={this.removeLine}>
+                        <Glyphicon glyph="minus"/>
+                    </Button>
+                </Col>
+            </Row>
+        );
+    },
 
     render() {
 
         return (
             <Grid>
-                <Row>
-                    <Col sm={4}>
-                        <ControlLabel>Requirement</ControlLabel>
-                        <FormControl
-                            type="text"
-                            placeholder="Enter text"
-                            onChange={(e) => this.setName(e.target.value, j)}/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col sm={3}>
-                        <ControlLabel>Frequency</ControlLabel>
 
-
-                        <Select
-
-                            name="entityType"
-
-                            options={[
-                                            {label:"Monthly", value:"Corp"},
-                                            {label:"Quarterly", value:"LLC"},
-                                            {label:"Annually", value:"LP"},
-                                            {label:"Specify Date", value:"LP"}
-                                        ]}
-                            />
-                        </Col>
-                        <Col sm={3}>
-                            <ControlLabel>Specify Date</ControlLabel>
-
-                            <FormControl
-                            type="date"
-                            />
-
-                    </Col>
-                </Row>
-                <Row>
-                    <Col sm={3}>
-                        <ControlLabel>Send Reminders To</ControlLabel>
-                        <Select
-
-                            name="entityType"
-
-                            options={[
-                                            {label:"Arya Cleaning Supplies, Inc.", value:"Corp"},
-                                            {label:"Baelish Entertainment, LLC", value:"LLC"},
-                                            {label:"Cersei Wines, Inc.", value:"LP"}
-                                        ]}
-                            />
-                    </Col>
-
-
-                </Row>
-
+                {_.times(this.state.lines, (i)=> this.renderRow(i))}
 
             </Grid>
 

@@ -122,7 +122,7 @@ const PartiesForm = React.createClass({
                </Row>
                <Row>
                    <Col sm={3}><ControlLabel>Email</ControlLabel>
-                       <Button bsStyle="primary">Save/Add</Button>
+                       <Button bsStyle="primary">Add Contact</Button>
                    </Col>
 
                </Row>

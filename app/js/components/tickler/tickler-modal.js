@@ -17,7 +17,7 @@ var TicklerModal = React.createClass({
     render() {
 
         return (
-            <Modal {...this.props}>
+            <Modal {...this.props} dialogClassName='tickler-modal'>
                 <Modal.Header closeButton>
                     <Modal.Title>{/*this.props.client.companyName*/}Add/Edit Tickler&nbsp;&nbsp;&nbsp;
                     </Modal.Title>

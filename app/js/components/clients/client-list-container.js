@@ -138,7 +138,6 @@ var ClientListContainer = React.createClass({
                     </Tab>
                     <Tab name="Closed"
                          onDrop={e => this.clientDropHandler(e, 1)}>
-
                     </Tab>
                 </TabsPanel>
             </Panel>

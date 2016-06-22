@@ -6,6 +6,7 @@ const ReactBootstrap = require('react-bootstrap'),
 	ControlLabel = ReactBootstrap.ControlLabel,
 
 	ButtonToolbar = ReactBootstrap.ButtonToolbar,
+	Radio = ReactBootstrap.Radio,
 	Button = ReactBootstrap.Button,
 	Label = ReactBootstrap.Label,
 	Modal = ReactBootstrap.Modal;
@@ -80,8 +81,28 @@ const SendDocuments = React.createClass({
 					<Modal.Title>Documents to send</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
-					<ControlLabel>To</ControlLabel>
+                    <FormGroup>
+                        <ControlLabel>To:</ControlLabel>
+
+                        <Radio>
+                            Me Only
+                        </Radio>
+
+                        <Radio>
+                            Everyone at my company
+                        </Radio>
+
+                        <Radio>
+                            Everyone in the Working Group
+                        </Radio>
+                        <Radio>
+                            Select below
+                        </Radio>
+                    </FormGroup>
+<FormGroup sm={3}>
+
 					<Select
+
 
 						name="entityType"
 multi
@@ -92,6 +113,7 @@ multi
                                             {label:"Cersei Wines, Inc.", value:"LP"}
                                         ]}
 						/>
+    </FormGroup>
 					<ButtonToolbar>
 						<Button bsStyle="primary" bsSize="xsmall"
 								onClick={()=>{this.setCheckboxesStatus(true)}}>Select all</Button>

@@ -38,25 +38,25 @@ const DocumentList = React.createClass({
             documentList: [
                 {
                     action,
-                    responsibility: 'Due Quarterly',
+                    responsibility: 'Due Aug 15, 2016',
 
                     //style: {fontWeight:'normal'},
-                    name:'Need name',
+                    name:'Quarterly Financial Statements',
 
                 },
                 {
                     action,
-                    responsibility: 'Due Nov 7th, 2017',
+                    responsibility: 'Due Nov 7, 2016',
 
                     //style: {fontWeight:'normal', color:'grey'},
-                    name:'Need name',
+                    name:'Evidence of Insurance Renewal',
 
                 },
                 {
                     action,
-                    responsibility: 'Due Annually',
+                    responsibility: 'Due March 30, 2017',
                     //style: {fontWeight:'normal', color:'red'},
-                    name:'Need name'
+                    name:'Audited Financial Statements'
 
                 }
 
@@ -113,7 +113,7 @@ const DocumentList = React.createClass({
                         bsStyle="primary"
                         onClick={e=>this.setState({showDocumentsModal:true})}
                         >
-                        Add
+                        Add/Edit
                     </Button>
 
                 </ButtonToolbar>
