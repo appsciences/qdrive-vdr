@@ -128,10 +128,10 @@ const PartiesForm = React.createClass({
                    </Col>
                </Row>
                <Row>
-                   <Col sm={5}>
+                   <Col sm={6}>
                        <FormGroup>
                            <Button bsStyle="primary">Add Contact</Button>
-                           <HelpBlock>Add Contact to this Company</HelpBlock>
+                           <HelpBlock>Additional Contact at this Company</HelpBlock>
                        </FormGroup>
                    </Col>
 

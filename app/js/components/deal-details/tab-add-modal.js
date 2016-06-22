@@ -39,18 +39,18 @@ var TabModal = React.createClass({
                             <Col sm={6}>
                                 <FormGroup>
                                     <ControlLabel>Grant Access</ControlLabel>
-                                    <Radio>
+                                    <Radio name='access'>
                                         Me Only
                                     </Radio>
 
-                                    <Radio>
+                                    <Radio name='access'>
                                         Everyone at my company
                                     </Radio>
 
-                                    <Radio>
+                                    <Radio name='access'>
                                         Everyone in the Working Group
                                     </Radio>
-                                    <Radio>
+                                    <Radio name='access'>
                                         Select below
                                     </Radio>
                                 </FormGroup>
