@@ -138,13 +138,7 @@ var ClientListContainer = React.createClass({
                     </Tab>
                     <Tab name="Closed"
                          onDrop={e => this.clientDropHandler(e, 1)}>
-                        <ClientList
-                            clients={this.getFilteredClients(1)}
-                            onSelectClient={this.props.onSelectClient}
-                            onEditClient={this.showEditClientModal}
-                            selectedClient={this.props.selectedClient}
-                            selectedClientId={this.props.selectedClientId}
-                        />
+
                     </Tab>
                 </TabsPanel>
             </Panel>
