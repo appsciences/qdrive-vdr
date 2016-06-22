@@ -79,7 +79,7 @@ const PartyList = React.createClass({
                             bsStyle="primary"
                             onClick={e=>this.setState({showDocumentsModal:true})}
                         >
-                            Add/Edit
+                            Add
                         </Button>
 
                     </ButtonToolbar>

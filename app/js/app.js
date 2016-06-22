@@ -7,6 +7,7 @@ const Spinner = require('react-spinkit');
 
 const DocumentList = require('./components/documents/document-list'),
     PartyList = require('./components/parties/party-list'),
+    TicklerList = require('./components/tickler/tickler-list'),
     ClientListContainer = require('./components/clients/client-list-container'),
     Parties = require('./components/parties/parties-form')
 
@@ -123,6 +124,12 @@ const Application = React.createClass({
                                                     <DocumentList
                                                         />
                                                 </Tab>
+
+                                                <Tab eventKey={2} name="Tickler">
+                                                    <TicklerList
+                                                        />
+                                                </Tab>
+
                                             </Tabs>
                                         </Panel>
                                     </Col>

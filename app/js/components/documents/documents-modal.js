@@ -28,7 +28,7 @@ var DocumentsModal = React.createClass({
                 </Modal.Body>
                 <Modal.Footer>
                     <ButtonToolbar>
-                        <Button bsStyle="primary" type="submit" onClick={this.save} name="saveButton" value="save">Save</Button>
+                        <Button bsStyle="primary" type="submit" onClick={this.onHide} name="saveButton" value="save">Save</Button>
                     </ButtonToolbar>
                 </Modal.Footer>
 
