@@ -3,9 +3,11 @@ var React = require('react'),
 
 var ReactBootstrap = require('react-bootstrap'),
     FormControl = ReactBootstrap.FormControl,
+    FormGroup = ReactBootstrap.FormGroup,
     ControlLabel = ReactBootstrap.ControlLabel,
     Modal = ReactBootstrap.Modal,
     Grid = ReactBootstrap.Grid,
+    Radio = ReactBootstrap.Radio,
     Row = ReactBootstrap.Row,
     Col = ReactBootstrap.Col,
     ButtonToolbar = ReactBootstrap.ButtonToolbar,
@@ -27,12 +29,31 @@ var TabModal = React.createClass({
                     <Grid fluid={true}>
                         <Row>
                             <Col sm={6}>
+                                <FormGroup>
+
                                 <ControlLabel>Tab Name</ControlLabel>
                                 <FormControl type="text" required name="tabName"/>
+                                    </FormGroup>
                             </Col>
                             </Row><Row>
                             <Col sm={6}>
-                                <ControlLabel>Grant Access</ControlLabel>
+                                <FormGroup>
+                                    <ControlLabel>Grant Access</ControlLabel>
+                                    <Radio>
+                                        Me Only
+                                    </Radio>
+
+                                    <Radio>
+                                        Everyone at my company
+                                    </Radio>
+
+                                    <Radio>
+                                        Everyone in the Working Group
+                                    </Radio>
+                                    <Radio>
+                                        Select below
+                                    </Radio>
+                                </FormGroup>
                                 <Select
 
                                     name="entityType"

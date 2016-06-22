@@ -87,9 +87,9 @@ const Application = React.createClass({
                         <img src="images/qdrive-logo.png"/>
                     </Col>
                     <Col xs={9} className="text-right">
-                        <Button style={{marginTop: 12, marginRight: 8}} target='_new' href="http://www.qdrivesolutions.com/tutorial">Tutorial</Button>
-                        <Button style={{marginTop: 12, marginRight: 8}} target='_new' href="http://www.qdrivesolutions.com/comments/">Leave Comment</Button>
-                        <Button style={{marginTop: 12}} href="/logout">Log Out</Button>
+                        <Button style={{marginTop: 12, marginRight: 8}} >Tutorial</Button>
+                        <Button style={{marginTop: 12, marginRight: 8}} >Leave Comment</Button>
+                        <Button style={{marginTop: 12}}>Log Out</Button>
                     </Col>
                 </Row>
                 <Row>

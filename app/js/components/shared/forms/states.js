@@ -3,7 +3,6 @@ var Select = require('react-select');
 
 var States = React.createClass({
     propTypes: {
-        getLinkState: React.PropTypes.func.isRequired,
         namePrefix: React.PropTypes.string.isRequired,
         withoutLabel: React.PropTypes.bool
     },

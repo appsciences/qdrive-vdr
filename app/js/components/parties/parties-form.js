@@ -9,6 +9,8 @@ const _ = require('lodash');
 
 var ReactBootstrap = require('react-bootstrap'),
     FormControl = ReactBootstrap.FormControl,
+    FormGroup = ReactBootstrap.FormGroup,
+    HelpBlock = ReactBootstrap.HelpBlock,
     ControlLabel = ReactBootstrap.ControlLabel,
     Modal = ReactBootstrap.Modal,
     Grid = ReactBootstrap.Grid,
@@ -111,18 +113,26 @@ const PartiesForm = React.createClass({
                     </Col>
                 </Row>
                <Row>
-                   <Col sm={5}><ControlLabel>Email</ControlLabel>
-                       <FormControl type="text" name="contactFirstName"
-                           />
-                   </Col>
                    <Col sm={5}>
+                       <FormGroup>
+                           <ControlLabel>Email</ControlLabel>
+                       <FormControl type="text" name="contactFirstName"
+                           />                       </FormGroup>
+
+                       </Col>
+                   <Col sm={5}>
+                       <FormGroup>
                        <ControlLabel>Phone</ControlLabel>
                        <FormControl type="text" name="contactLastName"/>
+                           </FormGroup>
                    </Col>
                </Row>
                <Row>
-                   <Col sm={3}><ControlLabel>Email</ControlLabel>
-                       <Button bsStyle="primary">Add Contact</Button>
+                   <Col sm={5}>
+                       <FormGroup>
+                           <Button bsStyle="primary">Add Contact</Button>
+                           <HelpBlock>Add Contact to this Company</HelpBlock>
+                       </FormGroup>
                    </Col>
 
                </Row>

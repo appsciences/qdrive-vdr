@@ -28,7 +28,7 @@ var PartiesModal = React.createClass({
                 </Modal.Body>
                 <Modal.Footer>
                     <ButtonToolbar>
-                        <Button bsStyle="primary" title="Import from Outlook or CRM" form="clientForm" disabled='true' name="importButton" value="import">Import</Button>
+                        <Button bsStyle="primary" title="Import from Outlook or CRM" form="clientForm" name="importButton" value="import">Import</Button>
                         <Button bsStyle="primary" type="submit" onClick={this.onHide} name="saveButton" value="save">Save</Button>
                     </ButtonToolbar>
                 </Modal.Footer>

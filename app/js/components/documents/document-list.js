@@ -3,7 +3,7 @@ const React = require('react'),
 
 const ReactBootstrap = require('react-bootstrap'),
     ButtonGroup = ReactBootstrap.ButtonGroup,
-    DropdownButton = ReactBootstrap.DropdownButton,
+    SplitButton = ReactBootstrap.SplitButton,
     MenuItem = ReactBootstrap.MenuItem,
     Grid = ReactBootstrap.Grid,
     Row = ReactBootstrap.Row,
@@ -34,13 +34,13 @@ const DocumentList = React.createClass({
     getInitialState(){
 
         const action = (
-            <DropdownButton title="View" bsStyle="primary">
+            <SplitButton title="View" bsStyle="primary">
             <MenuItem >Download</MenuItem>
             <MenuItem >Upload</MenuItem>
             <MenuItem >Open Redlined</MenuItem>
             <MenuItem >Sign</MenuItem>
             <MenuItem >Activity</MenuItem>
-        </DropdownButton>);
+        </SplitButton>);
 
         return {
             showDocumentsModal: false,

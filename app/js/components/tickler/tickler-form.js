@@ -65,7 +65,7 @@ const DocumentsForm = React.createClass({
                                             {label:"Monthly", value:"Monthly"},
                                             {label:"Quarterly", value:"Quarterly"},
                                             {label:"Annually", value:"Annually"},
-                                            {label:"Specify Date", value:"Specify Date"}
+                                            {label:"Nonrecurring", value:"Specify Date"}
 
 
                                         ]}

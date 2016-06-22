@@ -25,11 +25,7 @@ const DocumentList = React.createClass({
 
     getInitialState(){
 
-        const action = (
-            <Button
-                bsStyle="primary"
-                onClick={e=>this.setState({showDocumentsModal:true})}
-                >Edit</Button>);
+        const action = null;
 
         return {
             showDocumentsModal: false,
