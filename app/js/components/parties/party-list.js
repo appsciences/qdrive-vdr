@@ -10,6 +10,7 @@ const ReactBootstrap = require('react-bootstrap'),
     Col = ReactBootstrap.Col,
     Label = ReactBootstrap.Label,
     Input = ReactBootstrap.Input,
+    Table = ReactBootstrap.Table,
     Alert = ReactBootstrap.Alert,
     Button = ReactBootstrap.Button,
     ButtonToolbar = ReactBootstrap.ButtonToolbar;
@@ -36,32 +37,27 @@ const PartyList = React.createClass({
             showDocusignModal: false,
             documentList: [
                 {
-                    type:'group',
-                    action:'',
-                    name:'Borrowers',
-                    subItems:[
-                        {
-                            action,
-
-                            name:'Arya Stark, Arya Cleaning Supplies, Inc.',
+                            name:'John Smith',
+                    company:'Black Rock',
+                    function:'Borrower'
 
                         },
                         {
-                            action,
 
-                            name:'George Stephanapoulos, Baelish Entertainment, LLC',
+                            name:'Laura Alvarez',
+                            company: 'JPMorgan',
+                            function: 'Agent'
 
                         },
                         {
-                            action,
-                            name:'Josephine Mendoza, Cersei Wines, Inc.',
+                            name:'Sean Murphy',
+                            company: 'RBC',
+                            function: 'Lender'
 
                         }
 
                     ]
 
-                }
-            ]
 
         };
     },
@@ -88,20 +84,21 @@ const PartyList = React.createClass({
                     <Spinner
                         spinnerName="circle"
                         style={{visibility:this.state.generatingProposalLetter?'visible':'hidden',float:'left'}}/>
-                    <Spinner
-                        spinnerName="circle"
-                        style={{visibility:this.state.generatingDrafts?'visible':'hidden',float:'left'}}/>
-                    <Spinner
-                        spinnerName="circle"
-                        style={{visibility:this.state.generatingDocs?'visible':'hidden',float:'left'}}/>
                 </div>
+<Table striped>
+                {this.state.documentList.map(party =>
+                    <tr >
+                        <td style={{paddingTop:15}}>{party.name}</td>
+                        <td style={{paddingTop:15}}>{party.company}</td>
+                        <td style={{paddingTop:15}}>{party.function}</td>
+                        <td style={{paddingTop:15}}> <Button
+                            bsStyle="primary"
+                        >
+                            Edit
+                        </Button></td>
 
-                <ListHolder
-                    items={this.state.documentList}
-                    onDnd={this.itemDndHandler}
-                />
-
-
+                    </tr>)}
+</Table>
                 <PartiesModal
                     show={this.state.showDocumentsModal}
                     onHide={()=>this.setState({showDocumentsModal:false})}

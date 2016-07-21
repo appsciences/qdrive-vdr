@@ -50,46 +50,38 @@ const DocumentList = React.createClass({
                 {
                     action,
                     //style: {fontWeight:'normal'},
-                    responsibility: 'Resp: Michael Clain',
-                    name:'Customer Notification Letter',
+                    responsibility: 'Resp: Windels',
+                    parties: 'Parties: Borrower, Lenders, Agent',
+                    name:'Credit Agreement',
 
                 },
                 {
                     action,
-                    responsibility: 'Resp: Arya Cleaning Supplies',
-
-                    //style: {fontWeight:'normal', color:'grey'},
-                    name:'Factoring Agreement',
-
-                },
-                {
-                    action,
-                    responsibility: 'Resp: Michael Clain',
-                    //style: {fontWeight:'normal', color:'red'},
-                    name:'Guarantee Payment',
+                    responsibility: 'Resp: KS',
+                    parties: 'Party: Borrower',
+                    name:'Officer\'s Certificate',
 
                 },
                 {
                     action,
-                    responsibility: 'Resp: Baelish Entertainment',
-
-                    name:'Guarantee Validity',
+                    responsibility: 'Resp: Windels',
+                    parties: 'Party: N/A',
+                    name:'Certificate of Good Standing',
 
                 },
                 {
                     action,
                     //style: {fontWeight:'normal'},
-                    responsibility: 'Resp: Cersei Wines',
+                    responsibility: 'Resp: Borrower',
+                    parties: 'Party: John Smith',
 
-                    name:'IP Security Agreement'
+                    name:'12/31/15 Audited Financials'
 
                 },
                 {
-                    action,
-                    //style: {fontWeight:'normal'},
-                    responsibility: 'Resp: Arya Stark',
-
-                    name:'Intercreditor Agreement Affiliated Lender'
+                    responsibility: 'Resp: Borrower',
+                    parties: 'Party: Borrower',
+                    name:'Notice of Borrowing'
 
                 },
 

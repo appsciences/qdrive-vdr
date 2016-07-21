@@ -40,7 +40,7 @@ const ListHolder = React.createClass({
                             )
                         }
                     </span>
-                    <div className="info">{item.responsibility}</div>
+                    {item.responsibility && <div className="info">{item.responsibility}&nbsp;&nbsp;&nbsp;&nbsp;{item.parties}</div>}
                 </div>
             </div>
         );

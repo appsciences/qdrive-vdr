@@ -33,26 +33,15 @@ const DocumentList = React.createClass({
             showSendDocumentsModal: false,
             documentList: [
                 {
-                    action,
-                    responsibility: 'Due Aug 15, 2016',
-
-                    //style: {fontWeight:'normal'},
-                    name:'Quarterly Financial Statements',
+                    name:'Quarterly Financials Due: 11/15/16',
 
                 },
                 {
-                    action,
-                    responsibility: 'Due Nov 7, 2016',
-
-                    //style: {fontWeight:'normal', color:'grey'},
-                    name:'Evidence of Insurance Renewal',
+                    name:'Evidence of Insurance Renewal Due: 3/31/17',
 
                 },
                 {
-                    action,
-                    responsibility: 'Due March 30, 2017',
-                    //style: {fontWeight:'normal', color:'red'},
-                    name:'Audited Financial Statements'
+                    name:'Annual Financials Due: 4/30/17'
 
                 }
 

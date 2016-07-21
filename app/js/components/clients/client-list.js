@@ -55,7 +55,7 @@ var ClientList = React.createClass({
 
 
                         <h5>
-                            Baelish Entertainment, LLC
+                            Black Rock
                         </h5>
                     </NavItem>
                     <NavItem key='1' bsStyle='primary'
@@ -65,7 +65,7 @@ var ClientList = React.createClass({
 
 
                         <h5>
-                            Brianne Travel LLC <Badge>2</Badge>
+                            Cablevision&nbsp;<Badge>2</Badge>
                         </h5>
                     </NavItem>
                     <NavItem key='2' bsStyle='primary'
@@ -75,7 +75,7 @@ var ClientList = React.createClass({
 
 
                         <h5>
-                            Firefly Candle Supplies, LLC&nbsp;<Badge>4</Badge>
+                            HEA&nbsp;<Badge>4</Badge>
                         </h5>
                     </NavItem>
                     <NavItem key='3' bsStyle='primary'
@@ -85,7 +85,7 @@ var ClientList = React.createClass({
 
 
                         <h5>
-                            Qdrive Solutions, LLC
+                            Transdigm
                         </h5>
                     </NavItem>
                 </Nav>
